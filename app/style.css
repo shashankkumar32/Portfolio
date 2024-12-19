@@ -1,0 +1,322 @@
+/* Main container */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensures sections span the full height */
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    font-family: 'Orbitron';
+  }
+  
+  /* Left Section */
+  .left-section {
+    position: relative;
+    z-index: 2; /* Higher than Spline */
+    width: 25%; /* Preserve equal width */
+    height: 100%; /* Full height */
+    padding: 20px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.6));
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px); /* Glassy effect */
+    overflow-y: auto; /* Enable scrolling for the whole left section */
+    overflow-x: hidden;
+  }
+  
+  /* Shiny Overlay Effect for Left Section */
+  .left-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(60deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    opacity: 0.4;
+    border-radius: 10px;
+    transform: translateX(-100%);
+    animation: shine 3s infinite;
+    pointer-events: none;
+  }
+  .left-section::-webkit-scrollbar {
+    width: 8px; /* Make the scrollbar narrow */
+  }
+  
+  .left-section::-webkit-scrollbar-thumb {
+    background-color: #ffffff; /* White thumb */
+    border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+    border: 2px solid #333; /* Dark border around the thumb */
+  }
+  
+  .left-section::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2); /* Light black track */
+    border-radius: 10px; /* Rounded corners for the track */
+  }
+  
+  /* Optionally, add a hover effect to the scrollbar */
+  .left-section::-webkit-scrollbar-thumb:hover {
+    background-color: #cccccc; /* Lighter thumb color on hover */
+  }
+  
+  
+ /* Skills Stack */
+.skills-stack {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create two equal-width columns */
+    gap: 10px; /* Space between buttons */
+    max-width: 350px; /* Limit the width of the container to 350px */
+    max-height: 400px; /* Constrain height to 400px */
+    overflow-y: auto; /* Enable scrolling within this section */
+    padding-right: 10px; /* Space for scrollbar */
+    width: 100%; /* Ensure it is responsive */
+  }
+  
+  /* Scrollbar Customization */
+  .skills-stack::-webkit-scrollbar {
+    width: 8px; /* Set scrollbar width to be small */
+    height: 8px; /* Set horizontal scrollbar height */
+  }
+  
+  .skills-stack::-webkit-scrollbar-thumb {
+    background-color: black; /* Set the scrollbar thumb color to black */
+    border-radius: 10px; /* Make the scrollbar thumb rounded */
+    border: 2px solid white; /* Add a white border around the scrollbar thumb */
+  }
+  
+  .skills-stack::-webkit-scrollbar-track {
+    background-color: white; /* Set the scrollbar track background to white */
+    border-radius: 10px; /* Make the scrollbar track rounded */
+  }
+  
+  /* Skill Buttons */
+  .skill-button {
+    background-color: black; /* Set button background to black */
+    color: white; /* Set text color to white */
+    border: 2px solid white; /* Add a white border around the button */
+    border-radius: 20px; /* Curved button corners */
+    padding: 10px 20px; /* Space inside the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 14px; /* Font size */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Button shadow */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animation for hover effects */
+    width: 100%; /* Make the button take full width of its grid cell */
+  }
+  
+  /* Hover Effects */
+  .skill-button:hover {
+    transform: scale(1.1); /* Slight zoom-in effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+  }
+  
+  
+  /* Right Section */
+  .right-section {
+    position: relative;
+    z-index: 2; /* Higher than Spline */
+    width: 25%; /* Preserve equal width */
+    height: 100%; /* Full height */
+    padding: 20px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.6));
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px); /* Glassy effect */
+    overflow-y: auto; /* Enable scrolling for experience content */
+    overflow-x: hidden;
+  }
+  
+  /* Shiny Overlay Effect for Right Section */
+  .right-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(60deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    opacity: 0.4;
+    border-radius: 10px;
+    transform: translateX(-100%);
+    animation: shine 3s infinite;
+    pointer-events: none;
+  }
+  
+  /* Shiny Animation */
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Spline Background */
+  .spline-background {
+    position: fixed; /* Ensure it covers the background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Push behind all other elements */
+  }
+ /* Container for the buttons */
+.contact-buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; /* Adjust margin for spacing */
+  }
+  
+  /* Base button styling */
+  .contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: black; /* Set button background to black */
+    color: white; /* Set text color to white */
+    border: 2px solid white; /* Add a white border around the button */
+    /* border: none; */
+    border-radius: 25px; /* Sleek, smooth curved button edges */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 8px; /* Space between icon and text */
+    width: 100%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
+  }
+  
+  .contact-button:hover {
+    background-color: #333; /* Darker black shade on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  .contact-button:focus {
+    outline: none; /* Remove focus outline */
+  }
+  
+  /* Specific styles for each button */
+  .contact-button.call {
+    background-color: #28a745; /* Green for Call */
+  }
+  
+  .contact-button.mail {
+    background-color: #f44336; /* Red for Mail */
+  }
+  
+  .contact-button.github {
+    background-color: #24292f; /* Dark color for GitHub */
+  }
+  
+  .contact-button.linkedin {
+    background-color: #0077b5; /* Blue for LinkedIn */
+  }
+  
+  /* Icon styling */
+  .icon {
+    font-size: 20px; /* Adjust icon size */
+    transition: transform 0.2s ease;
+  }
+  
+  /* Hover effect for icons */
+  .contact-button:hover .icon {
+    transform: rotate(15deg); /* Rotate icon slightly on hover */
+  }
+  /* Experience Heading */
+.experience-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px; /* Space below the heading */
+    padding: 20px;
+    border-bottom: 2px solid #ffffff; /* White line below the heading */
+  }
+  
+  /* Experience Cards */
+  .experience-card {
+    background-color: #222; /* Dark background for the card */
+    color: white; /* Text color inside the card */
+    padding: 20px;
+    margin-bottom: 20px; /* Space between cards */
+    border: 2px solid white; /* White border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .experience-card:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+  }
+  
+  /* Company Name - Red */
+  .experience-card .company-name {
+    color: #f44336; /* Red color for the company name */
+    font-size: 1.5rem; /* Slightly larger font for the company name */
+    font-weight: bold;
+    margin-bottom: 10px; /* Space below company name */
+  }
+  
+  /* Position Name - White */
+  .experience-card .position-name {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-bottom: 10px; /* Space below position name */
+  }
+  
+  /* Additional Experience Text */
+  .experience-card .experience-details {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px; /* Space below experience details */
+  }
+  
+  /* Specific Styling for Experience Sections */
+  .experience-card.tech-mahindra {
+    background-color: #333; /* Darker background for Tech Mahindra */
+  }
+  
+  .experience-card.think201 {
+    background-color: #444; /* Slightly lighter for Think201 */
+  }
+  
+  .experience-card.codify {
+    background-color: #555; /* Even lighter for Codify */
+  }
+  
+  /* Spacing between the experience cards */
+  .experience-card:last-child {
+    margin-bottom: 0; /* Remove margin on last card */
+  }
+  .heading-name {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px; /* Space below the heading */
+    padding: 20px;
+    border-bottom: 2px solid #ffffff; /* White line below the heading */
+  }
+  .heading-skill {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px; /* Space below the heading */
+    padding: 20px;
+    border-bottom: 2px solid #ffffff; /* White line below the heading */
+  }
