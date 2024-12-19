@@ -320,3 +320,127 @@
     padding: 20px;
     border-bottom: 2px solid #ffffff; /* White line below the heading */
   }
+  /* Mobile View Adjustments (for screens < 900px) */
+@media (max-width: 900px) {
+  /* Main Container Adjustments */
+  .main-container {
+    flex-direction: column; /* Stack sections vertically */
+    height: auto; /* Allow the height to adjust to content */
+  }
+
+  /* Left Section */
+  .left-section {
+    width: 100%; /* Full width for the left section */
+    padding: 15px; /* Adjust padding */
+  }
+
+  /* Right Section */
+  .right-section {
+    width: 100%; /* Full width for the right section */
+    padding: 15px; /* Adjust padding */
+  }
+
+  /* Heading Name */
+  .heading-name {
+    font-size: 1.5rem; /* Smaller font size */
+    display:block;
+    margin-bottom: 15px;
+  }
+
+  /* Skills Stack - Make it inline and scrollable */
+  .skills-stack {
+    display: flex;
+    /* flex-wrap: nowrap; Don't allow wrapping */
+    /* width: 900px;
+     */
+     max-width:100%;
+    gap: 15px; /* Space between skills */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding-right: 10px; /* Ensure there's space for the scrollbar */
+  }
+
+  /* Skill Buttons - Make them inline */
+  .skill-button {
+    background-color: black; /* Set button background to black */
+    color: white; /* Set text color to white */
+    border: 2px solid white; /* Add a white border around the button */
+    border-radius: 20px; /* Curved button corners */
+    padding: 8px 12px; /* Adjust padding */
+    font-size: 14px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Button shadow */
+    white-space: nowrap; /* Prevent text from wrapping */
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+  }
+
+  /* Contact Buttons - Align buttons in one line */
+  .contact-buttons {
+    display: flex;
+    flex-direction: row; /* Align buttons in a row */
+    gap: 10px; /* Space between buttons */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjust margin for spacing */
+    flex-wrap: wrap; /* Allow wrapping if necessary */
+  }
+
+  /* Contact Button - Make buttons smaller and inline */
+  .contact-button {
+    font-size: 14px; /* Smaller font size for buttons */
+    padding: 10px 18px; /* Smaller padding */
+    width: auto; /* Auto width for buttons */
+    display: inline-flex; /* Ensure they stay inline */
+  }
+
+  /* Right Section - Experience Section */
+  .experience-section {
+    display: flex;
+    flex-wrap: nowrap; /* Keep experience cards in one line */
+    gap: 20px; /* Space between cards */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding-right: 15px; /* Add space for scrollbar */
+  }
+
+  /* Experience Cards */
+  .experience-card {
+    width: auto; /* Adjust width based on content */
+    min-width: 250px; /* Set a minimum width for cards */
+    padding: 15px;
+    margin-bottom: 15px; /* Add space below each card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Card shadow */
+  }
+
+  /* Company Name */
+  .experience-card .company-name {
+    font-size: 1.3rem; /* Adjust font size */
+    margin-bottom: 8px; /* Adjust spacing */
+  }
+
+  /* Position Name */
+  .experience-card .position-name {
+    font-size: 1rem; /* Adjust font size */
+    margin-bottom: 10px;
+  }
+
+  /* Experience Details */
+  .experience-card .experience-details {
+    font-size: 0.9rem; /* Smaller font size for details */
+    line-height: 1.4;
+  }
+
+  /* Heading - Experience Section */
+  .experience-heading {
+    font-size: 1.5rem; /* Smaller heading size */
+    margin-bottom: 20px;
+  }
+
+  /* Reduce margin between the experience cards */
+  .experience-card:last-child {
+    margin-bottom: 0; /* Remove margin on the last card */
+  }
+  
+  /* For smooth scrolling behavior */
+  .skills-stack, .experience-section {
+    scroll-behavior: smooth;
+  }
+}

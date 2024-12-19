@@ -60,8 +60,8 @@ export default function Home() {
 
       {/* Right Section */}
       <div className="right-section">
-      <div className="experience-section">
   <h2 className="experience-heading">Experience</h2>
+      <div className="experience-section">
 
   <div className="experience-card tech-mahindra">
     <div className="company-name">Tech Mahindra</div>
@@ -79,7 +79,7 @@ export default function Home() {
     <div className="experience-details">
       • Developed reusable components with React, Next.js, TypeScript, and Material-UI, cutting front-end development time by 20%.<br />
       • Led GDPR compliance POC, increased audit scores by 25%.<br />
-      • Delivered scalable solutions for Milan Foundation and Climate Asia, supporting a 30% user base growth without performance issues.
+      • Delivered scalable solutions, supporting a 30% user base growth without performance issues.
     </div>
   </div>
 
